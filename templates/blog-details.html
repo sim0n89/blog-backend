@@ -29,11 +29,13 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="main_blog_details">
+
               {% if post.image_url %}
                 <img class="img-fluid" src="{{post.image_url}}" alt="">
               {% else %}
-                <img class="img-fluid" src="{% static 'css/img/banner/blog.png' %}" alt="">
+                <img class="img-fluid" src="{% static 'css/img/banner/blog.png' %}" alt="{{post.title}}">
               {% endif %}
+
               <h4>{{post.title}}</h4>
               <div class="user_details">
                 <div class="mt-sm-0 mt-3">
@@ -61,6 +63,7 @@
 
             <div class="comments-area">
               <h4>{{post.comments_amount}} Comments</h4>
+
               {% for comment in post.comments%}
               <div class="comment-list">
                 <div class="single-comment justify-content-between d-flex">
